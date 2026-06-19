@@ -1,0 +1,322 @@
+{
+  "updatedAt": "2026-06-18T13:25:38.650Z",
+  "createdAt": "2026-06-18T12:41:40.018Z",
+  "id": "oxA1Cq6RbAJlCDgS",
+  "name": "My workflow 3",
+  "description": null,
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -256,
+        -32
+      ],
+      "id": "58b9871b-c8b3-43f2-b928-38c0e1ea7966",
+      "name": "When chat message received",
+      "webhookId": "04a0ab5d-5bd4-4c0d-8143-5db9ffd64307"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -32,
+        -112
+      ],
+      "id": "26080fc0-e0ce-479f-af54-a1b07e768cc2",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -96,
+        80
+      ],
+      "id": "c3394e78-a7f6-4709-8d77-ccaeed7f58e4",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "kFGZbaGJ7gu27BLg",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        48,
+        96
+      ],
+      "id": "8458bbbf-7397-4da2-abce-b0594b28687c",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "description": "tell me how much money i can earn if i am working in AI field then u will reply \"u can earn money according to ur workhard and success its may be 5000$\""
+      },
+      "type": "@n8n/n8n-nodes-langchain.toolCode",
+      "typeVersion": 1.3,
+      "position": [
+        176,
+        144
+      ],
+      "id": "606e3997-d06b-48f4-8bde-bd76f9d5b0ee",
+      "name": "Code Tool"
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "ed09632c-6897-4881-a5ab-3d0188a1ec8d",
+  "activeVersionId": "ed09632c-6897-4881-a5ab-3d0188a1ec8d",
+  "versionCounter": 43,
+  "triggerCount": 1,
+  "shared": [
+    {
+      "updatedAt": "2026-06-18T12:41:40.029Z",
+      "createdAt": "2026-06-18T12:41:40.029Z",
+      "role": "workflow:owner",
+      "workflowId": "oxA1Cq6RbAJlCDgS",
+      "projectId": "53226NUhgib0uTzC",
+      "project": {
+        "updatedAt": "2026-06-06T09:25:46.721Z",
+        "createdAt": "2026-06-06T09:21:17.669Z",
+        "id": "53226NUhgib0uTzC",
+        "name": "Alina Zubair <baigalina463@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "creatorId": "c6149c53-1e8a-4b51-a084-c22cfa3ea55d"
+      }
+    }
+  ],
+  "tags": [],
+  "parentFolder": null,
+  "activeVersion": {
+    "updatedAt": "2026-06-18T13:25:57.000Z",
+    "createdAt": "2026-06-18T13:19:38.863Z",
+    "versionId": "ed09632c-6897-4881-a5ab-3d0188a1ec8d",
+    "workflowId": "oxA1Cq6RbAJlCDgS",
+    "nodes": [
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+        "typeVersion": 1.4,
+        "position": [
+          -256,
+          -32
+        ],
+        "id": "58b9871b-c8b3-43f2-b928-38c0e1ea7966",
+        "name": "When chat message received",
+        "webhookId": "04a0ab5d-5bd4-4c0d-8143-5db9ffd64307"
+      },
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.agent",
+        "typeVersion": 3.1,
+        "position": [
+          -32,
+          -112
+        ],
+        "id": "26080fc0-e0ce-479f-af54-a1b07e768cc2",
+        "name": "AI Agent"
+      },
+      {
+        "parameters": {
+          "modelName": "models/gemini-2.5-flash",
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+        "typeVersion": 1.1,
+        "position": [
+          -96,
+          80
+        ],
+        "id": "c3394e78-a7f6-4709-8d77-ccaeed7f58e4",
+        "name": "Google Gemini Chat Model",
+        "credentials": {
+          "googlePalmApi": {
+            "id": "kFGZbaGJ7gu27BLg",
+            "name": "Google Gemini(PaLM) Api account"
+          }
+        }
+      },
+      {
+        "parameters": {},
+        "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+        "typeVersion": 1.4,
+        "position": [
+          48,
+          96
+        ],
+        "id": "8458bbbf-7397-4da2-abce-b0594b28687c",
+        "name": "Simple Memory"
+      },
+      {
+        "parameters": {
+          "description": "tell me how much money i can earn if i am working in AI field then u will reply \"u can earn money according to ur workhard and success its may be 5000$\""
+        },
+        "type": "@n8n/n8n-nodes-langchain.toolCode",
+        "typeVersion": 1.3,
+        "position": [
+          176,
+          144
+        ],
+        "id": "606e3997-d06b-48f4-8bde-bd76f9d5b0ee",
+        "name": "Code Tool"
+      }
+    ],
+    "connections": {
+      "When chat message received": {
+        "main": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Google Gemini Chat Model": {
+        "ai_languageModel": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_languageModel",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Simple Memory": {
+        "ai_memory": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_memory",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Code Tool": {
+        "ai_tool": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "nodeGroups": [],
+    "authors": "Alina Zubair",
+    "name": "n8n agent workflow",
+    "description": "",
+    "autosaved": true,
+    "workflowPublishHistory": [
+      {
+        "createdAt": "2026-06-18T13:25:57.588Z",
+        "id": 5,
+        "workflowId": "oxA1Cq6RbAJlCDgS",
+        "versionId": "ed09632c-6897-4881-a5ab-3d0188a1ec8d",
+        "event": "activated",
+        "userId": "c6149c53-1e8a-4b51-a084-c22cfa3ea55d"
+      }
+    ]
+  },
+  "scopes": [
+    "execution:reveal",
+    "workflow:create",
+    "workflow:delete",
+    "workflow:disableRedaction",
+    "workflow:enableRedaction",
+    "workflow:execute",
+    "workflow:execute-chat",
+    "workflow:export",
+    "workflow:list",
+    "workflow:move",
+    "workflow:publish",
+    "workflow:read",
+    "workflow:share",
+    "workflow:unpublish",
+    "workflow:unshare",
+    "workflow:update"
+  ],
+  "checksum": "921ca60b0a8be95d9896c414faa50940bf9b8b879b16f9b1e198bcadbdbec856"
+}
